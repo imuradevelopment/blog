@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   // ベースURL
-  base: "/",
+  base: "/vuepress/",
   // 多言語対応
   locales: {
     "/": {
@@ -34,7 +34,7 @@ module.exports = {
   // クライアントの一時ディレクトリ
   //temp: "/path/to/@vuepress/core/.temp",
   // 出力ディレクトリ
-  dest: "public",
+  dest: ".vuepress/dist",
   // 不明の設定
   shouldPrefetch: () => true,
   // キャッシュ(webpack高速化)
