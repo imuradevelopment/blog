@@ -1,0 +1,463 @@
+/*以下テーマスタイル変更*/
+
+.theme-reco-content.content__default{
+  background-color: var(--background-color);
+  }
+//navbarSetting
+.navbar .links
+  font-size: 15.5px !important;
+
+// sidebarSetting
+// 右側の記事タイトルナビゲーションバー
+.side-bar a.sidebar-link {
+  font-size: 0.8rem !important;
+  padding-left: 0.3rem !important;
+}
+// 右側サイドバーのアクティブヘッダーのスタイル
+.side-bar a.sidebar-link.router-link-exact-active {
+    color: $sidebarOpenPageTextColor !important;
+    font-weight: bold !important;
+    background: $accentColor !important;
+    padding-left: 0.3rem
+}
+
+// 左側のサイドバータイトルのフォントサイズ&スタイル(close状態)
+.sidebar-heading span{
+    font-size: 1.2em !important;
+    font-weight: bolder !important;
+}
+// 左側のサイドバータイトルのフォントサイズ&スタイル(open状態)
+.sidebar-heading.open span{
+    font-weight: bold !important;
+}
+
+// 左側のサイドバーにある展開された記事のフォントサイズ
+a.sidebar-link.active {
+    color: $sidebarOpenPageTextColor !important;
+    font-weight: bold !important;
+    font-size: 1rem !important;
+    background: #c3d4b742 !important;
+}
+.sidebar-sub-headers a.sidebar-link {
+    margin: 0 1rem 0 1rem !important;
+}
+
+// グループ化の透明性の変更、効果的ではない
+.sidebar-group.is-sub-group > .sidebar-heading:not(.clickable){
+    opacity: 0.7 !important;
+}
+.sidebar-group.is-sub-group > .sidebar-heading span{
+  font-size:1.1rem !important;
+}
+
+// timelineSetting
+.timeline-wrapper .year {
+  margin: 80px 0px 20px !important;
+  font-size: 27px !important;
+}
+.timeline-wrapper .year-wrapper li {
+    padding: 10px 20px 10px !important;
+    border-bottom: 2px solid #999da06b !important;
+    background: var(--code-color);
+    border-radius: 5rem;
+    margin: 5px 0px;
+    transition: all .5s;
+}
+.timeline-wrapper .year-wrapper li:hover {
+    transform:  translate(30px,0);
+    transition: all .5s;
+}
+.timeline-wrapper .year-wrapper li .date {
+  width: 43px !important;
+  font-size: 13px !important;
+}
+.timeline-wrapper .year-wrapper li .date:before {
+    top: 22px !important;
+    border: 1px solid !important;
+}
+.timeline-wrapper:after {
+    background: skyblue !important;
+}
+.timeline-wrapper .desc:before, .timeline-wrapper .year:before {
+  background: cadetblue !important;
+}
+.timeline-wrapper .year-wrapper li .title {
+  font-weight:bold;
+  display:inline-block;
+  width:100%;
+}
+
+//scrollbarSetting
+::-webkit-scrollbar
+  width: 6px !important;
+/*スクロールバーの設定*/
+::-webkit-scrollbar-thumb {
+	background-color:#94989c8c !important;
+	background-clip:padding-box !important;
+	-webkit-border-radius: 10em !important;
+	-moz-border-radius: 10em !important;
+	border-radius: 10em !important;
+}
+/*スクロールバーの溝の色、境界線の属性を設定することもできます */
+::-webkit-scrollbar-track-piece {
+	background-color:transparent !important;
+	-webkit-border-radius: 0em !important;
+	-moz-border-radius: 0em !important;
+	border-radius: 0em !important;
+}
+/*スクロールバーを上に移動します*/
+::-webkit-scrollbar-thumb:hover {
+	background-color:#bbb !important;
+}
+
+// //ホームページ、コメントを残しました
+//  .page, .password-wrapper-in {
+//      margin-left: 8rem !important;
+//  }
+// .comments-wrapper {
+//     padding: 2rem 2rem 2rem 10rem !important;
+// }
+// #valine .vwrap .vedit #veditor{
+//   background: url('/znote/img/other/comment.png')
+//   background-position: 90% 60%
+//   background-size: 16rem 10rem
+//   background-repeat: no-repeat
+// }
+
+//$mobileSidebarWidth = $sidebarWidth * 0.82
+
+// // 狭いデスクトップ/ iPad
+// @media (max-width: $MQNarrow)
+//   .sidebar
+//     font-size 15px
+//     width $mobileSidebarWidth !important;
+//   .page, .password-wrapper-in
+//     margin-left $mobileSidebarWidth !important;
+//   .comments-wrapper
+//     padding: 2rem 2rem 2rem $mobileSidebarWidth*1.1 !important;
+
+// // ワイドモバイル
+// @media (max-width: $MQMobile)
+//   .sidebar
+//     top 0
+//     padding-top $navbarHeight !important;
+//     transform translateX(-100%)
+//     transition transform .2s ease
+//   .page, .password-wrapper-in
+//     margin-left 0  !important;
+//   .comments-wrapper
+//     padding: 2rem 2rem 2rem 2rem !important;
+//   .theme-container
+//     &.sidebar-open
+//       .sidebar
+//         transform translateX(0) !important;
+//     &.no-navbar
+//       .sidebar
+//         padding-top: 0 !important;
+//   .password-shadow
+//     padding-left 0 !important;
+
+// // 狭いモバイル
+// @media (max-width: $MQMobileNarrow)
+//   h1
+//     font-size 1.9rem
+//   .content__default
+//     div[class*="language-"]
+//       margin 0.85rem -1.5rem  !important;
+//       border-radius 0
+// //私について
+// @media (min-width: ($MQMobile + 1px))
+//   .theme-container.no-sidebar
+//     .sidebar
+//       display none
+//     .page, .password-wrapper-in
+//       margin-left 0  !important;
+//     .comments-wrapper
+//       padding: 2rem 2rem 2rem 2rem !important;
+
+// //ラベルリストスタイル
+// .abstract-item {
+//   background-color: #acdcfd3d !important;
+//   transition: all .5s;
+// }
+// .abstract-item:hover {
+//     transform:  scale(1.02);
+//     transition: all .5s;
+// }
+
+// /*以上テーマスタイル変更*/
+
+
+
+// /*以下マークダウン設定*/
+// ヒント、警告、危険コンテナスタイル
+.custom-block.tip {
+    background-color: #d4d4d452 !important;
+}
+.custom-block.warning {
+    background-color: #ffa16d47 !important;
+}
+.custom-block.danger {
+    background-color: #f9b4b457 !important;
+}
+
+// 詳細コンテナスタイル
+.custom-block.details {
+	background-color: var(--code-color) !important;
+  margin: 1rem 0 1rem 0 !important;
+  padding: 0.5rem 0.5rem 0.5rem !important;
+  font-size: 1rem !important;
+  border-left: .25rem solid var(--text-color) !important;
+}
+.custom-block.details[open] summary{
+  color: $accentColor !important;
+}
+
+// 引用スタイル
+.custom-block.theorem {
+	background-color: var(--code-color) !important;
+    margin: 1rem 0 1rem 0 !important;
+    padding: 0 1rem 0 0 !important;
+    font-size: 1rem !important;
+    border-left: .25rem solid var(--text-color) !important;
+    margin-left: 0 !important;
+    padding-left: 1rem !important;
+}
+// /*@require './markdown-container'*/
+// .cardListContainer
+//   margin .7rem 0
+//   &>:not(.card-list)
+//     display none
+//   .card-list
+//     margin -0.35rem
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: flex-start;
+//     .card-item
+//       width calc(100%/3 - .7rem)
+//       margin auto
+//       background var(--bodyBg)
+//       border-radius 3px
+//       color var(--textColor)
+//       display flex
+//       box-shadow 1px 1px 2px 0 rgba(0,0,0,.06)
+//       &:hover
+//         text-decoration none
+//         img
+//           transform rotate(8deg) scale(1.1, 1.1)
+//           box-shadow 3px 2px 7px rgba(0, 0, 0, 0.15)
+//         div p
+//           text-shadow 3px 2px 5px rgba(0, 0, 0, 0.15)
+//       img
+//         width 60px
+//         height 60px
+//         border-radius 50%
+//         border 2px solid #fff
+//         margin 1rem
+//         margin-right 0
+//         box-shadow 3px 2px 5px rgba(0, 0, 0, 0.08)
+//         transition all .4s
+//       div
+//         flex 1
+//         display inline-block
+//         float right
+//         padding 1rem 0
+//         p
+//           margin 0
+//           padding 0 1rem
+//           transition text-shadow .4s
+//           text-align center
+//         .name
+//           margin .2rem 0 .3rem 0
+//         .desc
+//           font-size .8rem
+//           line-height 1.1rem
+//           opacity .8
+//           margin-bottom .2rem
+//     .card-item.row-1
+//       width calc(100% - .7rem)
+//       img
+//         margin-left 2rem
+//     .card-item.row-2
+//       width calc(100%/2 - .7rem)
+//       img
+//         margin-left 1.5rem
+//     .card-item.row-3
+//       width calc(100%/3 - .7rem)
+//     .card-item.row-4
+//       width calc(100%/4 - .7rem)
+
+// .cardImgListContainer
+//   margin 1rem 0
+//   &>:not(.card-list)
+//     display none
+//   .card-list
+//     margin -0.5rem
+//     display: flex;
+//     flex-wrap: wrap;
+//     align-items: flex-start;
+//     .card-item
+//       width calc(100%/3 - 1rem)
+//       margin .5rem
+//       background var(--mainBg)
+//       border 1px solid rgba(0,0,0,0.08)
+//       box-sizing: border-box
+//       border-radius 3px
+//       overflow hidden
+//       color var(--textColor)
+//       box-shadow 2px 2px 10px rgba(0,0,0,.04)
+//       display flex
+//       flex-direction: column;
+//       justify-content: flex-start;
+//       align-items: stretch;
+//       align-content: stretch;
+//       transition: box-shadow .3s
+//       &:hover
+//         box-shadow 1px 1px 20px rgba(0,0,0,.07)
+//       .box-img
+//         overflow hidden
+//         position relative
+//         background #000
+//         img
+//           display block
+//           width 100%
+//           height auto
+//           transition: all .3s
+//         &:hover
+//           img
+//             transform: scale(1.1, 1.1)
+//             opacity .75
+//       a
+//         color var(--textColor)
+//         transition: color .3s
+//         &:hover
+//           color $accentColor
+//           text-decoration none
+//       .box-info
+//         padding: .8rem 1rem
+//         p
+//           margin 0
+//         .desc
+//           margin-top: .3rem
+//           opacity .8
+//           font-size: .9rem
+//           line-height: 1.1rem
+//       .box-footer
+//         overflow hidden
+//         padding: .8rem 1rem
+//         border-top:  1px solid rgba(0,0,0,0.05)
+//         img
+//           width 1.8rem
+//           height 1.8rem
+//           border-radius 50%
+//           float left
+//         span
+//           line-height 1.8rem
+//           float left
+//           margin-left: .6rem
+//           font-size: .8rem
+//     .card-item.row-1
+//       width calc(100% - 1rem)
+//     .card-item.row-2
+//       width calc(100%/2 - 1rem)
+//     .card-item.row-3
+//       width calc(100%/3 - 1rem)
+//     .card-item.row-4
+//       width calc(100%/4 - 1rem)
+
+// .theme-mode-dark
+//   .cardImgListContainer
+//     .card-list
+//       .card-item
+//         border-color: var(--borderColor)
+//         .box-footer
+//            border-color: var(--borderColor)
+
+// // カードリストの応答
+// @media (max-width: 900px)
+//   .cardListContainer
+//     .card-list
+//       .card-item.row-4
+//         width calc(100%/3 - .7rem)
+//   .cardImgListContainer
+//     .card-list
+//       .card-item.row-4
+//         width calc(100%/3 - 1rem)
+
+// @media (max-width: 720px)
+//   .cardListContainer
+//     .card-list
+//       .card-item.row-3, .card-item.row-4
+//         width calc(100%/2 - .7rem)
+//         img
+//           margin-left 1.5rem
+//   .cardImgListContainer
+//     .card-list
+//       .card-item.row-3, .card-item.row-4
+//         width calc(100%/2 - 1rem)
+
+// @media (max-width: 500px)
+//   .cardListContainer
+//     .card-list
+//       .card-item.row-1, .card-item.row-2, .card-item.row-3, .card-item.row-4
+//         width calc(100% - .7rem)
+//         img
+//           margin-left 1.5rem
+//   .cardImgListContainer
+//     .card-list
+//       .card-item.row-1, .card-item.row-2, .card-item.row-3, .card-item.row-4
+//         width calc(100% - 1rem)
+// /*以上markdown設定*/
+
+/*pulginSetting*/
+
+/*語彙説明ホバー用*/
+abbr {
+  position: relative;
+  &::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    display: inline-block;
+    min-width: 200px;
+    padding: .6em .8em;
+    background: #3eaf7c;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+    transform: translateX(-50%);
+    transition: .2s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  &:hover::after {
+    z-index:2147483647;
+    bottom: 120%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.page {
+  overflow-x: visible !important;
+}
+// .sidebar {
+//   z-index:auto !important;
+//   }
+
+
+/*youtube埋め込みレスポンシブ*/
+.embed-responsive {
+  position: relative;
+  height: 0;
+  padding-top: 56.25%;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
