@@ -96,6 +96,7 @@ module.exports = {
     mode: "dark",
     modePicker: false,
     repo: 'https://github.com/account0248/vuepress',
+    docsBranch: 'main',
     editLinks: true,
     editLinkText: 'このページを編集する',
     nav: [
