@@ -29,16 +29,6 @@ export default {
     }
   },
   mounted () {
-    // function getRandomBgImage() {
-    //   function getRandomInt(min, max) {
-    //     min = Math.ceil(min);
-    //     max = Math.floor(max);
-    //     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-    //   }
-    //   let index = getRandomInt(1, 8);
-    //   return "url(/images/jpg/" + index + ".jpg)";
-    // };
-    // document.getElementsByClassName("hero")[0].style.backgroundImage = getRandomBgImage()
     if(localStorage.getItem("heroImageNum") == null){
       localStorage.setItem("heroImageNum", 1);
       localStorage.saveKey = "heroImageNum";
