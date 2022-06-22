@@ -1,5 +1,5 @@
 name: Build and Deploy
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -11,7 +11,7 @@ jobs:
       uses: jenkey2011/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.TOKEN }}
-        TARGET_REPO: account0248/vuepress
+        TARGET_REPO: imuradevelopment/blog
         TARGET_BRANCH: gh-pages
         BUILD_SCRIPT: yarn && yarn build
         BUILD_DIR: .vuepress/dist

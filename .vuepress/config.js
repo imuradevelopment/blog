@@ -4,7 +4,7 @@ const path = require("path");
 
 module.exports = {
   // ベースURL
-  base: "/vuepress/",
+  base: "/blog/",
   // 多言語対応
   locales: {
     "/": {
@@ -95,7 +95,7 @@ module.exports = {
     type: "blog",
     mode: "dark",
     modePicker: false,
-    repo: 'https://github.com/account0248/vuepress',
+    repo: 'https://github.com/imuradevelopment/blog',
     docsBranch: 'main',
     editLinks: true,
     editLinkText: 'このページを編集する',

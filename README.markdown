@@ -11,8 +11,9 @@ vue.jsで開発されているのでvuepressといい、○○.mdだけでなく
 
 と言うことである。
 
-GithubPagesを使用して公開すると。
-[こんな感じ](https://account0248.github.io/vuepress/)  
+GithubPagesを使用して公開すると。  
+[こんな感じ](https://imuradevelopment.github.io/blog/)  
+[![Build and Deploy](https://github.com/imuradevelopment/blog/actions/workflows/vuepress-deploy.yml/badge.svg)](https://github.com/imuradevelopment/blog/actions/workflows/vuepress-deploy.yml)  
 
 ## 目次
 [1. リポジトリのコピーと初期設定を行う](#リポジトリのコピーと初期設定を行う)  
@@ -47,7 +48,7 @@ GithubPagesを使用して公開すると。
         uses: jenkey2011/vuepress-deploy@master
         env:
             ACCESS_TOKEN: ${{ secrets.TOKEN }}
-            TARGET_REPO: account0248/vuepress
+            TARGET_REPO: imuradevelopment/blog
             TARGET_BRANCH: gh-pages
             BUILD_SCRIPT: yarn && yarn build
             BUILD_DIR: .vuepress/dist
@@ -68,7 +69,7 @@ GithubPagesを使用して公開すると。
         uses: jenkey2011/vuepress-deploy@master
         env:
             ACCESS_TOKEN: ${{ secrets.TOKEN }}
-            TARGET_REPO: 自分のGitHub名/vuepress   ←ココのaccount0248を自分のGitHub名に書き換える
+            TARGET_REPO: 自分のGitHub名/blog   ←ココのimuradevelopment/blogを自分のGitHub名に書き換える
             TARGET_BRANCH: gh-pages
             BUILD_SCRIPT: yarn && yarn build
             BUILD_DIR: .vuepress/dist
@@ -79,7 +80,7 @@ GithubPagesを使用して公開すると。
     // 変更前（一部抜粋）
     mode: "dark",
     modePicker: false,
-    repo: 'https://github.com/account0248/vuepress',
+    repo: 'https://github.com/imuradevelopment/blog',
     editLinks: true,
     editLinkText: 'このページを編集する',
     ```
@@ -87,20 +88,20 @@ GithubPagesを使用して公開すると。
     // 変更後（一部抜粋）
     mode: "dark",
     modePicker: false,
-    repo: 'https://github.com/自分のGitHub名/vuepress', ←ココのaccount0248を自分のGitHub名に書き換える
+    repo: 'https://github.com/自分のGitHub名/blog', imuradevelopmentを自分のGitHub名に書き換える
     editLinks: true,
     editLinkText: 'このページを編集する',
     ```
-    - README.md
+    - README.markdown
     ```md
     <!-- 変更前（一部抜粋） -->
     GithubPagesを使用して公開すると。
-    [こんな感じ](https://account0248.github.io/vuepress/)  
+    [こんな感じ](https://imuradevelopment.github.io/blog/)  
     ```
     ```md
     <!-- 変更後（一部抜粋） -->
     GithubPagesを使用して公開すると。
-    [こんな感じ](https://account0248.github.io/vuepress/)  ←ココのaccount0248を自分のGitHub名に書き換える
+    [こんな感じ](https://imuradevelopment.github.io/blog/)  imuradevelopment
     ```
     2.3. 最後にコミットは忘れずにしてください！  
     以上で初期設定は完了、GitHubPagesに自動デプロイ（公開）できる設定になっているはず  
@@ -118,7 +119,7 @@ GithubPagesを使用して公開すると。
 
 2. 作成したトークンをリポジトリに設定する  
     2.1. Github上でForkしたリポジトリを開き、Settingsタブに移動する  
-    2.2. Security > Secrets > Actionsを押下する(左側のメニュー欄)  
+    2.2. Settings > Secrets > Actionsを押下する(左側のメニュー欄)  
     2.3. New repository secretボタンを押下する  
     2.4. Nameに「TOKEN」、Valueに「コピーした文字列」を入力する  
     2.5. Add secretボタンを押下する  
@@ -127,7 +128,7 @@ GithubPagesを使用して公開すると。
 ## 自動デプロイの実行と確認
 
 1. Githubにpushする  
-2. ブラウザで[GitHub](https://github.com/)を開いて、Forkでコピーしたvuepressリポジトリを開く  
+2. ブラウザで[GitHub](https://github.com/)を開いて、Forkでコピーしたblogリポジトリを開く  
 3. Actionsタブに移動すると、GitHubActionsが実行されていることが確認できる（2個走るので3分ぐらい待ってください）  
 1個目のActionには、自分のコミットメッセージが表示される  
 2個目のActionには、「pages build and deployment」という文字列が表示される  
