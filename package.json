@@ -4,7 +4,7 @@
   "author": "reco_luan",
   "main": "index.js",
   "scripts": {
-    "dev": "unset NODE_OPTIONS NODE_OPTIONS='--openssl-legacy-provider' vuepress dev . --open --host \"localhost\"",
+    "dev": "unset NODE_OPTIONS vuepress dev . --open --host \"localhost\"",
     "devnch": "unset NODE_OPTIONS NODE_OPTIONS='--openssl-legacy-provider' vuepress dev . --no-cache",
     "build": "unset NODE_OPTIONS NODE_OPTIONS='--openssl-legacy-provider' vuepress build ."
   },
