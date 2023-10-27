@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SQLまとめ | VanillaNote</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/blog/favicon.ico">
+    <meta name="description" content="SQLの基本文法まとめ">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preload" href="/blog/assets/css/0.styles.c784e8f6.css" as="style"><link rel="preload" href="/blog/assets/js/app.8b46e1f1.js" as="script"><link rel="preload" href="/blog/assets/js/3.b4aa75af.js" as="script"><link rel="preload" href="/blog/assets/js/1.fa43a96b.js" as="script"><link rel="preload" href="/blog/assets/js/15.cbd0d66e.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.f9bd4f13.js"><link rel="prefetch" href="/blog/assets/js/11.00487125.js"><link rel="prefetch" href="/blog/assets/js/12.54ce7b0f.js"><link rel="prefetch" href="/blog/assets/js/13.2319e6ba.js"><link rel="prefetch" href="/blog/assets/js/14.23483dd9.js"><link rel="prefetch" href="/blog/assets/js/16.34ac0c1d.js"><link rel="prefetch" href="/blog/assets/js/17.68f4b666.js"><link rel="prefetch" href="/blog/assets/js/18.be987d39.js"><link rel="prefetch" href="/blog/assets/js/4.9469fb3f.js"><link rel="prefetch" href="/blog/assets/js/5.50868db6.js"><link rel="prefetch" href="/blog/assets/js/6.943374e6.js"><link rel="prefetch" href="/blog/assets/js/7.a9ca483e.js"><link rel="prefetch" href="/blog/assets/js/8.2954520c.js"><link rel="prefetch" href="/blog/assets/js/9.351bf513.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.c784e8f6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-0a66d9e0><div data-v-0a66d9e0><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-0a66d9e0 data-v-0a66d9e0><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-5cb9a64e data-v-0a66d9e0 data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e>VanillaNote</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>VanillaNote</span>
+            
+          <span data-v-5cb9a64e>2020 - </span>
+          2023
+        </a></span></div></div> <div class="hide" data-v-0a66d9e0><header class="navbar" data-v-0a66d9e0><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">VanillaNote</span></a> <div class="links"><!----> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  ホーム
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      カテゴリー
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/よく使うコマンド/" class="nav-link"><i class="iconfont undefined"></i>
+  よく使うコマンド
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/まとめ/" class="nav-link"><i class="iconfont undefined"></i>
+  まとめ
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/チートシート/" class="nav-link"><i class="iconfont undefined"></i>
+  チートシート
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/記載中/" class="nav-link"><i class="iconfont undefined"></i>
+  記載中
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  タグ
+</a></div><div class="nav-item"><a href="/blog/docs/" class="nav-link router-link-active"><i class="iconfont reco-message"></i>
+  記事一覧
+</a></div> <a href="https://github.com/imuradevelopment/blog" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask" data-v-0a66d9e0></div> <aside class="sidebar" data-v-0a66d9e0><div class="personal-info-wrapper" data-v-03833281 data-v-0a66d9e0><!----> <h3 class="name" data-v-03833281>
+    VanillaNote
+  </h3> <div class="num" data-v-03833281><div data-v-03833281><h3 data-v-03833281>4</h3> <h6 data-v-03833281>文章</h6></div> <div data-v-03833281><h3 data-v-03833281>4</h3> <h6 data-v-03833281>ラベル</h6></div></div> <hr data-v-03833281></div> <nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link"><i class="iconfont reco-home"></i>
+  ホーム
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      カテゴリー
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/よく使うコマンド/" class="nav-link"><i class="iconfont undefined"></i>
+  よく使うコマンド
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/まとめ/" class="nav-link"><i class="iconfont undefined"></i>
+  まとめ
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/チートシート/" class="nav-link"><i class="iconfont undefined"></i>
+  チートシート
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/記載中/" class="nav-link"><i class="iconfont undefined"></i>
+  記載中
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  タグ
+</a></div><div class="nav-item"><a href="/blog/docs/" class="nav-link router-link-active"><i class="iconfont reco-message"></i>
+  記事一覧
+</a></div> <a href="https://github.com/imuradevelopment/blog" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav> <ul class="sidebar-links"><li><a href="/blog/docs/" aria-current="page" class="sidebar-link">記事一覧</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>GitとGithub</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>postgreSQL</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/docs/postgreSQL/SQL.html" aria-current="page" class="active sidebar-link">SQLまとめ</a></li><li><a href="/blog/docs/postgreSQL/postgreSQL.html" class="sidebar-link">postgreSQLチートシート</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>typescript</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-5cb9a64e data-v-0a66d9e0><h3 class="title" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e></h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><input type="password" value="" data-v-5cb9a64e> <span data-v-5cb9a64e>Konck! Knock!</span> <button data-v-5cb9a64e>OK</button></label> <div class="footer" style="display:none;" data-v-5cb9a64e data-v-5cb9a64e><span data-v-5cb9a64e><i class="iconfont reco-theme" data-v-5cb9a64e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-5cb9a64e>vuePress-theme-reco</a></span> <span data-v-5cb9a64e><i class="iconfont reco-copyright" data-v-5cb9a64e></i> <a data-v-5cb9a64e><span data-v-5cb9a64e>VanillaNote</span>
+            
+          <span data-v-5cb9a64e>2020 - </span>
+          2023
+        </a></span></div></div> <div data-v-0a66d9e0><main class="page"><div class="page-title" style="display:none;"><h1 class="title">SQLまとめ</h1> <div data-v-698a76ac><i class="iconfont reco-account" data-v-698a76ac><span data-v-698a76ac>VanillaNote</span></i> <!----> <!----> <i class="iconfont reco-tag tags" data-v-698a76ac><span class="tag-item" data-v-698a76ac>SQL</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h1 id="sqlまとめ"><a href="#sqlまとめ" class="header-anchor">#</a> SQLまとめ</h1> <p></p><div class="table-of-contents"><ul><li><a href="#共通定義">共通定義</a><ul><li><a href="#記載について">記載について</a></li></ul></li><li><a href="#select-statement-clause">SELECT (statement, clause)</a><ul><li><a href="#from-clause">FROM (clause)</a></li><li><a href="#列エイリアスas-clause">列エイリアスAS (clause)</a></li><li><a href="#order-by-clause">ORDER BY (clause)</a></li><li><a href="#distinct-clause-operator">DISTINCT (clause, operator)</a></li><li><a href="#where-clause">WHERE (clause)</a></li><li><a href="#limit-clause-limit-offset-clause">LIMIT(clause), LIMIT OFFSET(clause)</a></li><li><a href="#fetch-clause-offset-fetch-clause">FETCH (clause), OFFSET FETCH (clause)</a></li><li><a href="#join系">JOIN系</a><ul><li><a href="#inner-join句">INNER JOIN句</a></li><li><a href="#left-join句-left-outer-join句">LEFT JOIN句 (LEFT OUTER JOIN句)</a></li><li><a href="#full-outer-join句">FULL OUTER JOIN句</a></li><li><a href="#self-join">SELF JOIN</a></li><li><a href="#cross-join句">CROSS JOIN句</a></li></ul></li><li><a href="#テーブルエイリアスas-clause">テーブルエイリアスAS (clause)</a></li><li><a href="#group-by-clause">GROUP BY (clause)</a><ul><li><a href="#grouping-sets">GROUPING SETS</a></li><li><a href="#grouping-function">GROUPING (function)</a></li><li><a href="#cube">CUBE</a></li><li><a href="#rollup">ROLLUP</a></li></ul></li><li><a href="#having-clause">HAVING (clause)</a></li><li><a href="#union-operator">UNION (operator)</a></li><li><a href="#intersect-operator">INTERSECT (operator)</a></li><li><a href="#except">EXCEPT</a></li></ul></li></ul></div><p></p> <h2 id="共通定義"><a href="#共通定義" class="header-anchor">#</a> 共通定義</h2> <p>この記事ではPostgreSQLを使用しています。</p> <h3 id="記載について"><a href="#記載について" class="header-anchor">#</a> 記載について</h3> <p>句 (clause)</p> <ul><li>文、又はクエリの構成要素。</li> <li>これで改行すると個人的にスッキリする。<br>
+文 (statement)</li> <li>一つの実行の単位となるSQL。</li> <li>文の末尾には';'を付けることができる(製品によっては付けないといけない)</li> <li>そのまとまりが実行できるなら、文と称しても問題ない。<br>
+式 (experssion)</li> <li>スカラ値や式を表す。<br>
+述語 (Predicates)</li> <li>論理演算の結果(true/false/unknown)を返す。</li> <li>条件式の中などで使用。<br>
+演算子 (operator)
+関数 (function)</li></ul> <h2 id="select-statement-clause"><a href="#select-statement-clause" class="header-anchor">#</a> SELECT (statement, clause)</h2> <p>列を選択し結果セットとして返す。<br>
+単に重複を除いた結果をそのまま出すだけの場合はDISTINCT,まとめた結果に対して何らかの処理を加える必要がある場合はGROUP BYを用いる。</p> <h3 id="from-clause"><a href="#from-clause" class="header-anchor">#</a> FROM (clause)</h3> <p>どのテーブルからもデータを問い合わせない場合、SELECT文のFROM句を省略することができまる。<br>
+FROM ⇒ SELECT</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token keyword">SELECT</span>
+   first_name<span class="token punctuation">,</span>
+   last_name<span class="token punctuation">,</span>
+   email
+<span class="token keyword">FROM</span>
+   customer<span class="token punctuation">;</span>
+
+<span class="token comment">/* 
+  アスタリスク「*」の使用
+  すべての列の省略形を表す。
+*/</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> customer<span class="token punctuation">;</span>
+
+<span class="token comment">/*
+  PostgreSQL：連結演算子「||」の使用
+  顧客の名,スペース,性を連結する。
+*/</span>
+<span class="token keyword">SELECT</span> 
+   first_name <span class="token operator">||</span> <span class="token string">' '</span> <span class="token operator">||</span> last_name<span class="token punctuation">,</span>
+   email
+<span class="token keyword">FROM</span> 
+   customer<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="列エイリアスas-clause"><a href="#列エイリアスas-clause" class="header-anchor">#</a> 列エイリアスAS (clause)</h3> <p>クエリ実行中に列に一時的な名前を割り当てる。<br>
+※ASは省略可</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token keyword">SELECT</span> 
+   first_name<span class="token punctuation">,</span> 
+   last_name <span class="token keyword">AS</span> surname
+<span class="token keyword">FROM</span> customer<span class="token punctuation">;</span>
+<span class="token comment">/*
+  ASは省略可能
+*/</span>
+<span class="token keyword">SELECT</span> 
+   first_name<span class="token punctuation">,</span> 
+   last_name surname
+<span class="token keyword">FROM</span> customer<span class="token punctuation">;</span>
+<span class="token comment">/*
+  式を含む列にも同様に名前を割り当て可能
+  省略も可
+*/</span>
+<span class="token keyword">SELECT</span>
+    first_name <span class="token operator">||</span> <span class="token string">' '</span> <span class="token operator">||</span> last_name <span class="token string">&quot;full name&quot;</span>
+<span class="token keyword">FROM</span>
+    customer<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h3 id="order-by-clause"><a href="#order-by-clause" class="header-anchor">#</a> ORDER BY (clause)</h3> <p>SELECT句から返す結果セットを並べ替える。<br>
+SELECT句に列エイリアスが存在する場合はそれを使用できる。<br>
+FROM ⇒ SELECT ⇒ ORDER BY の順で評価される。</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  ASC:昇順(省略できる)
+  DESC:降順
+*/</span>
+<span class="token keyword">SELECT</span>
+	first_name<span class="token punctuation">,</span>
+	last_name
+<span class="token keyword">FROM</span>
+	customer
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+	first_name <span class="token keyword">ASC</span><span class="token punctuation">,</span>
+	last_name <span class="token keyword">DESC</span><span class="token punctuation">;</span>
+<span class="token comment">/*
+  LENGTH関数
+*/</span>
+<span class="token keyword">SELECT</span> 
+	first_name<span class="token punctuation">,</span>
+	LENGTH<span class="token punctuation">(</span>first_name<span class="token punctuation">)</span> len
+<span class="token keyword">FROM</span>
+	customer
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> 
+	len <span class="token keyword">DESC</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h3 id="distinct-clause-operator"><a href="#distinct-clause-operator" class="header-anchor">#</a> DISTINCT (clause, operator)</h3> <p>SELECT句の結果セットから重複行を削除する。<br>
+重複のグループごとに1つの行を保持し、SELECT句の1つ以上の列に適用できる。<br>
+PostgreSQLはDISTINCT ON (expression) 構文を使用して、重複の各グループの「最初の」行を保持することもできる。<br>
+SELECT句から返される行の順序は指定されていないため、複製の各グループの「最初の」行も指定されていません。<br>
+結果セットを予測可能にするために、常にORDER BY句を使用DISTINCT ON(expression)する。</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  複数の列を指定した場合、
+  DISTINCT句は列の値の組み合わせに基づいて重複を評価する
+*/</span>
+<span class="token keyword">SELECT</span>
+	<span class="token keyword">DISTINCT</span>
+    bcolor<span class="token punctuation">,</span>
+    fcolor
+<span class="token keyword">FROM</span>
+	distinct_demo
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+	bcolor<span class="token punctuation">;</span>
+
+<span class="token comment">/*
+  PostgreSQL：DISTINCT ON (expression)
+  bcolorの重複グループの最初の行にあるbcolor, fcolorを結果セットとする。
+*/</span>
+<span class="token keyword">SELECT</span>
+	<span class="token keyword">DISTINCT</span> <span class="token keyword">ON</span> <span class="token punctuation">(</span>bcolor<span class="token punctuation">)</span> bcolor<span class="token punctuation">,</span>
+	fcolor
+<span class="token keyword">FROM</span>
+	distinct_demo 
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+	bcolor<span class="token punctuation">,</span>
+	fcolor<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="where-clause"><a href="#where-clause" class="header-anchor">#</a> WHERE (clause)</h3> <p>SELECTで評価される行をフィルタリングするための条件を指定する。<br>
+WHERE句は、SELECT文のFROM句の直後に記述する。<br>
+条件はtrue, false, unknownのいずれかに評価されなければならず、AND および OR 演算子を使用したブールを返す式の組み合わせになる。<br>
+条件が真と評価される行のみを結果セットとする。<br>
+FROM ⇒ WHERE ⇒ SELECT ⇒ ORDER BY<br>
+SELECT句で列エイリアスを使用する場合、WHERE句では使用できません。<br>
+SELECT 文以外にも、UPDATE 文および DELETE 文で WHERE 句を使用して、更新または削除する行を指定することができます。<br>
+比較演算子, 論理演算子の使用</p> <table><thead><tr><th>比較,論理演算子</th> <th>概要</th></tr></thead> <tbody><tr><td>=</td> <td>等しい</td></tr> <tr><td>&gt;</td> <td>右オペランドより大きい</td></tr> <tr><td>&lt;</td> <td>右オペランドより小さい</td></tr> <tr><td>&gt;=</td> <td>右オペランド以上</td></tr> <tr><td>&lt;=</td> <td>右オペランド以下</td></tr> <tr><td>&lt;&gt; or !=</td> <td>等しくない</td></tr> <tr><td>AND</td> <td>論理演算子 AND</td></tr> <tr><td>OR</td> <td>論理演算子 OR</td></tr> <tr><td>IN</td> <td>値がリスト内のいずれかの値に一致した場合に真を返します。</td></tr> <tr><td>BETWEEN</td> <td>値が値の範囲の間にある場合は真を返します。</td></tr> <tr><td>LIKE</td> <td>値がパターンにマッチした場合に真を返します。<br>（%）は、0文字以上の任意文字に一致<br>（_）は、任意の1文字に一致</td></tr> <tr><td>IS NULL</td> <td>値がNULLの場合は真を返します。</td></tr> <tr><td>NOT</td> <td>他の演算子の真偽値を入れ替える。</td></tr></tbody></table> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  OR演算子の使用
+*/</span>
+<span class="token keyword">SELECT</span>
+	first_name<span class="token punctuation">,</span>
+	last_name
+<span class="token keyword">FROM</span>
+	customer
+<span class="token keyword">WHERE</span>
+	last_name <span class="token operator">=</span> <span class="token string">'Rodriguez'</span> <span class="token operator">OR</span> 
+	first_name <span class="token operator">=</span> <span class="token string">'Adam'</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*
+  IN演算子の使用
+*/</span>
+<span class="token keyword">SELECT</span>
+	first_name<span class="token punctuation">,</span>
+	last_name
+<span class="token keyword">FROM</span>
+	customer
+<span class="token keyword">WHERE</span> 
+	first_name <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token string">'Ann'</span><span class="token punctuation">,</span><span class="token string">'Anne'</span><span class="token punctuation">,</span><span class="token string">'Annie'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*
+  LIKE演算子, BETWEEN演算子の使用
+*/</span>
+<span class="token keyword">SELECT</span>
+	first_name<span class="token punctuation">,</span>
+	LENGTH<span class="token punctuation">(</span>first_name<span class="token punctuation">)</span> name_length
+<span class="token keyword">FROM</span>
+	customer
+<span class="token keyword">WHERE</span> 
+	first_name <span class="token operator">LIKE</span> <span class="token string">'A%'</span> <span class="token operator">AND</span>
+	LENGTH<span class="token punctuation">(</span>first_name<span class="token punctuation">)</span> <span class="token operator">BETWEEN</span> <span class="token number">3</span> <span class="token operator">AND</span> <span class="token number">5</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+	name_length<span class="token punctuation">;</span>
+
+<span class="token comment">/*
+  サブクエリとIN演算子の使用
+  CASTで「日付 + 時刻両方」⇒「日付」に変換している。
+*/</span>
+<span class="token keyword">SELECT</span>
+	customer_id<span class="token punctuation">,</span>
+	first_name<span class="token punctuation">,</span>
+	last_name
+<span class="token keyword">FROM</span>
+	customer
+<span class="token keyword">WHERE</span>
+	customer_id <span class="token operator">IN</span> <span class="token punctuation">(</span>
+		<span class="token keyword">SELECT</span> customer_id
+		<span class="token keyword">FROM</span> rental
+		<span class="token keyword">WHERE</span> CAST <span class="token punctuation">(</span>return_date <span class="token keyword">AS</span> <span class="token keyword">DATE</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">'2005-05-27'</span>
+	<span class="token punctuation">)</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> customer_id<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br></div></div><h3 id="limit-clause-limit-offset-clause"><a href="#limit-clause-limit-offset-clause" class="header-anchor">#</a> LIMIT(clause), LIMIT OFFSET(clause)</h3> <p>クエリが返す行数を制限する。<br>
+指定値が0の場合、クエリは空の集合を返す。<br>
+NULLの場合クエリはLIMIT句を持たないため、同じ結果セットを返します。<br>
+指定値を返す前に行数を飛ばしたい場合は、LIMIT句の後にOFFSET句を使用します。<br>
+行の順序を制御するために必ずORDER BY句を使用しなければならない。<br>
+また、LIMIT句は、MySQL、H2、HSQLDBなどの多くのリレーショナルデータベース管理システムで広く使用されているが、SQL標準ではない。<br>
+SQL標準に準拠するために、PostgreSQLはFETCHクエリによって返される行数を取得する句をサポートしている。(次項)</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token keyword">SELECT</span>
+	film_id<span class="token punctuation">,</span>
+	title<span class="token punctuation">,</span>
+	release_year
+<span class="token keyword">FROM</span>
+	film
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+	film_id
+<span class="token keyword">LIMIT</span> <span class="token number">4</span> <span class="token keyword">OFFSET</span> <span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="fetch-clause-offset-fetch-clause"><a href="#fetch-clause-offset-fetch-clause" class="header-anchor">#</a> FETCH (clause), OFFSET FETCH (clause)</h3> <p>クエリによって返された行の一部を取得する。<br>
+行の順序を制御するために必ずORDER BY句を使用しなければならない。</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  タイトルで昇順でソートされた映画の最初の10行を結果セットとする。
+*/</span>
+<span class="token keyword">SELECT</span>
+    film_id<span class="token punctuation">,</span>
+    title
+<span class="token keyword">FROM</span>
+    film
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+    title 
+<span class="token keyword">FETCH</span> <span class="token keyword">FIRST</span> <span class="token number">10</span> <span class="token keyword">ROW</span> ONLY<span class="token punctuation">;</span>
+
+<span class="token comment">/*
+  OFFSETの使用
+  タイトルで昇順ソートされた映画の5～10行目の映画を結果セットとする。
+*/</span>
+<span class="token keyword">SELECT</span>
+    film_id<span class="token punctuation">,</span>
+    title
+<span class="token keyword">FROM</span>
+    film
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+    title 
+<span class="token keyword">OFFSET</span> <span class="token number">5</span> <span class="token keyword">ROWS</span> 
+<span class="token keyword">FETCH</span> <span class="token keyword">FIRST</span> <span class="token number">5</span> <span class="token keyword">ROW</span> ONLY<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="join系"><a href="#join系" class="header-anchor">#</a> JOIN系</h3> <p>PostgreSQLは、内部結合、左結合、右結合、完全外部結合、クロス結合、自然結合、および自己結合と呼ばれる特別な種類の結合をサポートしている。<br>
+それぞれ関連テーブル間の共通カラムの値に基づいて、1つ以上のテーブルからのカラムを結合するために使用される。<br>
+↓内部, 外部, 完全結合<br> <img src="/sqljoinimages/PostgreSQL-Joins-768x465.png" alt="An image"></p> <h4 id="inner-join句"><a href="#inner-join句" class="header-anchor">#</a> INNER JOIN句</h4> <p>INNER JOINは、最初のテーブル( basket_a)を取得し、fruit_a列と次のテーブル( basket_b)のfruit_b列を順に比較します。値が一致した両方のテーブルの列を含む新しい行を作成し、結果セットに追加します。
+<img src="/sqljoinimages/PostgreSQL-Join-Inner-Join.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment"># SELECT * FROM basket_a;</span>
+<span class="token comment">#  a | fruit_a</span>
+<span class="token comment"># ---+----------</span>
+<span class="token comment">#  1 | Apple</span>
+<span class="token comment">#  2 | Orange</span>
+<span class="token comment">#  3 | Banana</span>
+<span class="token comment">#  4 | Cucumber</span>
+<span class="token comment"># インデックス:</span>
+<span class="token comment">#     &quot;basket_a_pkey&quot; PRIMARY KEY, btree (a)</span>
+
+<span class="token comment"># SELECT * FROM basket_b;</span>
+<span class="token comment">#  b |  fruit_b</span>
+<span class="token comment"># ---+------------</span>
+<span class="token comment">#  1 | Orange</span>
+<span class="token comment">#  2 | Apple</span>
+<span class="token comment">#  3 | Watermelon</span>
+<span class="token comment">#  4 | Pear</span>
+<span class="token comment"># インデックス:</span>
+<span class="token comment">#     &quot;basket_b_pkey&quot; PRIMARY KEY, btree (b)</span>
+
+<span class="token keyword">SELECT</span>
+    a<span class="token punctuation">,</span>
+    fruit_a<span class="token punctuation">,</span>
+    b<span class="token punctuation">,</span>
+    fruit_b
+<span class="token keyword">FROM</span>
+    basket_a
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> basket_b
+    <span class="token keyword">ON</span> fruit_a <span class="token operator">=</span> fruit_b<span class="token punctuation">;</span>
+<span class="token comment">#  a | fruit_a | b | fruit_b</span>
+<span class="token comment"># ---+---------+---+---------</span>
+<span class="token comment">#  1 | Apple   | 2 | Apple</span>
+<span class="token comment">#  2 | Orange  | 1 | Orange</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><p>サンプルDBでの3テーブルのINNER JOIN<br> <img src="/sqljoinimages/customer-payment-staff-tables.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  支払い履歴を調べる
+*/</span>
+<span class="token keyword">SELECT</span>
+	c<span class="token punctuation">.</span>customer_id<span class="token punctuation">,</span>
+	c<span class="token punctuation">.</span>first_name customer_first_name<span class="token punctuation">,</span>
+	c<span class="token punctuation">.</span>last_name customer_last_name<span class="token punctuation">,</span>
+	s<span class="token punctuation">.</span>first_name staff_first_name<span class="token punctuation">,</span>
+	s<span class="token punctuation">.</span>last_name staff_last_name<span class="token punctuation">,</span>
+	amount<span class="token punctuation">,</span>
+	payment_date
+<span class="token keyword">FROM</span>
+	customer c
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> payment p 
+    <span class="token keyword">ON</span> p<span class="token punctuation">.</span>customer_id <span class="token operator">=</span> c<span class="token punctuation">.</span>customer_id
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> staff s 
+    <span class="token keyword">ON</span> p<span class="token punctuation">.</span>staff_id <span class="token operator">=</span> s<span class="token punctuation">.</span>staff_id
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> payment_date
+<span class="token keyword">LIMIT</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment">#  customer_id | customer_first_name | customer_last_name | staff_first_name | staff_last_name | amount |        payment_date</span>
+<span class="token comment"># -------------+---------------------+--------------------+------------------+-----------------+--------+----------------------------</span>
+<span class="token comment">#          416 | Jeffery             | Pinson             | Jon              | Stephens        |   2.99 | 2007-02-14 21:21:59.996577</span>
+<span class="token comment">#          516 | Elmer               | Noe                | Jon              | Stephens        |   4.99 | 2007-02-14 21:23:39.996577</span>
+<span class="token comment">#          239 | Minnie              | Romero             | Mike             | Hillyer         |   4.99 | 2007-02-14 21:29:00.996577</span>
+<span class="token comment">#          592 | Terrance            | Roush              | Jon              | Stephens        |   6.99 | 2007-02-14 21:41:12.996577</span>
+<span class="token comment">#           49 | Joyce               | Edwards            | Mike             | Hillyer         |   0.99 | 2007-02-14 21:44:52.996577</span>
+<span class="token comment">#          264 | Gwendolyn           | May                | Jon              | Stephens        |   3.99 | 2007-02-14 21:44:53.996577</span>
+<span class="token comment">#           46 | Catherine           | Campbell           | Mike             | Hillyer         |   4.99 | 2007-02-14 21:45:29.996577</span>
+<span class="token comment">#          481 | Herman              | Devore             | Jon              | Stephens        |   2.99 | 2007-02-14 22:03:35.996577</span>
+<span class="token comment">#          139 | Amber               | Dixon              | Jon              | Stephens        |   2.99 | 2007-02-14 22:11:22.996577</span>
+<span class="token comment">#          595 | Terrence            | Gunderson          | Jon              | Stephens        |   2.99 | 2007-02-14 22:16:01.996577</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h4 id="left-join句-left-outer-join句"><a href="#left-join句-left-outer-join句" class="header-anchor">#</a> LEFT JOIN句 (LEFT OUTER JOIN句)</h4> <p>LEFT JOINは、左テーブル( basket_a)からデータを取得し、fruit_a列の値と、 右テーブル（basket_b）のfruit_b列の値を順に比較します。<br>
+値が一致した場合、LEFT JOINは両方のテーブルの列を含む新しい行を作成し、この新しい行を結果セットに追加します。(結果セットの行#1と#2を参照)。<br>
+値が一致しない場合も、同様に新しい行を作成し結果セットに追加します。しかし、右のテーブル( basket_b)の列をnullで埋めます。(結果セットの行#3と#4を参照してください)。<br>
+LEFT JOINとLEFT OUTER JOINは同義。<br>
+RIGHT JOINは逆の動作をする。<br> <img src="/sqljoinimages/PostgreSQL-Join-Left-Join.png" alt="An image"><br>
+↓左テーブルのみに存在する行を選択した場合<br> <img src="/sqljoinimages/PostgreSQL-Join-Left-Join-with-Where.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment"># SELECT * FROM basket_a;</span>
+<span class="token comment">#  a | fruit_a</span>
+<span class="token comment"># ---+----------</span>
+<span class="token comment">#  1 | Apple</span>
+<span class="token comment">#  2 | Orange</span>
+<span class="token comment">#  3 | Banana</span>
+<span class="token comment">#  4 | Cucumber</span>
+<span class="token comment"># インデックス:</span>
+<span class="token comment">#     &quot;basket_a_pkey&quot; PRIMARY KEY, btree (a)</span>
+
+<span class="token comment"># SELECT * FROM basket_b;</span>
+<span class="token comment">#  b |  fruit_b</span>
+<span class="token comment"># ---+------------</span>
+<span class="token comment">#  1 | Orange</span>
+<span class="token comment">#  2 | Apple</span>
+<span class="token comment">#  3 | Watermelon</span>
+<span class="token comment">#  4 | Pear</span>
+<span class="token comment"># インデックス:</span>
+<span class="token comment">#     &quot;basket_b_pkey&quot; PRIMARY KEY, btree (b)</span>
+
+<span class="token keyword">SELECT</span>
+    a<span class="token punctuation">,</span>
+    fruit_a<span class="token punctuation">,</span>
+    b<span class="token punctuation">,</span>
+    fruit_b
+<span class="token keyword">FROM</span>
+    basket_a
+<span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> basket_b 
+   <span class="token keyword">ON</span> fruit_a <span class="token operator">=</span> fruit_b<span class="token punctuation">;</span>
+<span class="token comment">#  a | fruit_a  | b | fruit_b</span>
+<span class="token comment"># ---+----------+---+---------</span>
+<span class="token comment">#  1 | Apple    | 2 | Apple</span>
+<span class="token comment">#  2 | Orange   | 1 | Orange</span>
+<span class="token comment">#  3 | Banana   |   | </span>
+<span class="token comment">#  4 | Cucumber |   |</span>
+
+<span class="token comment">/*
+  左テーブルのみに存在する行を結果セットとする。
+*/</span>
+<span class="token keyword">SELECT</span>
+    a<span class="token punctuation">,</span>
+    fruit_a<span class="token punctuation">,</span>
+    b<span class="token punctuation">,</span>
+    fruit_b
+<span class="token keyword">FROM</span>
+    basket_a
+<span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> basket_b 
+    <span class="token keyword">ON</span> fruit_a <span class="token operator">=</span> fruit_b
+<span class="token keyword">WHERE</span> b <span class="token operator">IS</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
+<span class="token comment">#  a | fruit_a  | b | fruit_b</span>
+<span class="token comment"># ---+----------+---+---------</span>
+<span class="token comment">#  3 | Banana   |   |</span>
+<span class="token comment">#  4 | Cucumber |   |</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br></div></div><p>サンプルDBでの3テーブルのLEFT JOIN<br> <img src="/sqljoinimages/film-and-inventory-tables.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  DVDの在庫を調べる
+*/</span>
+<span class="token keyword">SELECT</span>
+	film<span class="token punctuation">.</span>film_id<span class="token punctuation">,</span>
+	title<span class="token punctuation">,</span>
+	inventory_id
+<span class="token keyword">FROM</span>
+	film
+<span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> inventory 
+    <span class="token keyword">ON</span> inventory<span class="token punctuation">.</span>film_id <span class="token operator">=</span> film<span class="token punctuation">.</span>film_id
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> title<span class="token punctuation">;</span>
+
+<span class="token comment">/*
+  在庫のないDVDを調べる
+*/</span>
+<span class="token keyword">SELECT</span>
+	f<span class="token punctuation">.</span>film_id<span class="token punctuation">,</span>
+	title<span class="token punctuation">,</span>
+	inventory_id
+<span class="token keyword">FROM</span>
+	film f
+<span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> inventory i
+   <span class="token keyword">ON</span> i<span class="token punctuation">.</span>film_id <span class="token operator">=</span> f<span class="token punctuation">.</span>film_id
+<span class="token keyword">WHERE</span> i<span class="token punctuation">.</span>film_id <span class="token operator">IS</span> <span class="token boolean">NULL</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> title<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h4 id="full-outer-join句"><a href="#full-outer-join句" class="header-anchor">#</a> FULL OUTER JOIN句</h4> <p>完全外部結合または完全結合は、左右両方のテーブルのすべての行を含む結果セットを返す。<br>
+一致する行がない場合、テーブルの列はNULLで埋める。<br> <img src="/sqljoinimages/PostgreSQL-Join-Full-Outer-Join.png" alt="An image"><br>
+↓各テーブルにのみ存在する行を選択した場合<br> <img src="/sqljoinimages/PostgreSQL-Join-Full-Outer-Join-with-Where.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment"># SELECT * FROM basket_a;</span>
+<span class="token comment">#  a | fruit_a</span>
+<span class="token comment"># ---+----------</span>
+<span class="token comment">#  1 | Apple</span>
+<span class="token comment">#  2 | Orange</span>
+<span class="token comment">#  3 | Banana</span>
+<span class="token comment">#  4 | Cucumber</span>
+<span class="token comment"># インデックス:</span>
+<span class="token comment">#     &quot;basket_a_pkey&quot; PRIMARY KEY, btree (a)</span>
+
+<span class="token comment"># SELECT * FROM basket_b;</span>
+<span class="token comment">#  b |  fruit_b</span>
+<span class="token comment"># ---+------------</span>
+<span class="token comment">#  1 | Orange</span>
+<span class="token comment">#  2 | Apple</span>
+<span class="token comment">#  3 | Watermelon</span>
+<span class="token comment">#  4 | Pear</span>
+<span class="token comment"># インデックス:</span>
+<span class="token comment">#     &quot;basket_b_pkey&quot; PRIMARY KEY, btree (b)</span>
+
+<span class="token keyword">SELECT</span>
+    a<span class="token punctuation">,</span>
+    fruit_a<span class="token punctuation">,</span>
+    b<span class="token punctuation">,</span>
+    fruit_b
+<span class="token keyword">FROM</span>
+    basket_a
+<span class="token keyword">FULL</span> <span class="token keyword">OUTER</span> <span class="token keyword">JOIN</span> basket_b 
+    <span class="token keyword">ON</span> fruit_a <span class="token operator">=</span> fruit_b<span class="token punctuation">;</span>
+<span class="token comment">#  a | fruit_a  | b |  fruit_b</span>
+<span class="token comment"># ---+----------+---+------------</span>
+<span class="token comment">#  1 | Apple    | 2 | Apple</span>
+<span class="token comment">#  2 | Orange   | 1 | Orange</span>
+<span class="token comment">#  3 | Banana   |   |</span>
+<span class="token comment">#  4 | Cucumber |   | </span>
+<span class="token comment">#    |          | 3 | Watermelon</span>
+<span class="token comment">#    |          | 4 | Pear</span>
+
+<span class="token comment">/*
+  各テーブルにのみ存在する行を結果セットとする。
+*/</span>
+<span class="token keyword">SELECT</span>
+    a<span class="token punctuation">,</span>
+    fruit_a<span class="token punctuation">,</span>
+    b<span class="token punctuation">,</span>
+    fruit_b
+<span class="token keyword">FROM</span>
+    basket_a
+<span class="token keyword">FULL</span> <span class="token keyword">JOIN</span> basket_b 
+   <span class="token keyword">ON</span> fruit_a <span class="token operator">=</span> fruit_b
+<span class="token keyword">WHERE</span> a <span class="token operator">IS</span> <span class="token boolean">NULL</span> <span class="token operator">OR</span> b <span class="token operator">IS</span> <span class="token boolean">NULL</span><span class="token punctuation">;</span>
+<span class="token comment">#  a | fruit_a  | b |  fruit_b</span>
+<span class="token comment"># ---+----------+---+------------</span>
+<span class="token comment">#  3 | Banana   |   |</span>
+<span class="token comment">#  4 | Cucumber |   |</span>
+<span class="token comment">#    |          | 3 | Watermelon</span>
+<span class="token comment">#    |          | 4 | Pear</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br></div></div><h4 id="self-join"><a href="#self-join" class="header-anchor">#</a> SELF JOIN</h4> <p>階層的なデータを問い合わせたり、同じテーブル内の行を比較したりするために自己結合を使用する。<br> <img src="/sqljoinimages/film_table.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  同じ長さの映画のすべての組み合わせを検索調べる。
+*/</span>
+<span class="token keyword">SELECT</span>
+    f1<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+    f2<span class="token punctuation">.</span>title<span class="token punctuation">,</span>
+    f1<span class="token punctuation">.</span>length
+<span class="token keyword">FROM</span>
+    film f1
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> film f2 
+    <span class="token keyword">ON</span> f1<span class="token punctuation">.</span>film_id <span class="token operator">&lt;&gt;</span> f2<span class="token punctuation">.</span>film_id <span class="token operator">AND</span> 
+       f1<span class="token punctuation">.</span>length <span class="token operator">=</span> f2<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h4 id="cross-join句"><a href="#cross-join句" class="header-anchor">#</a> CROSS JOIN句</h4> <p>2つの以上のテーブル内の行の積集合を求める為に使用する。<br> <img src="/sqljoinimages/PostgreSQL-CROSS-JOIN-illustration.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> T1
+<span class="token keyword">CROSS</span> <span class="token keyword">JOIN</span> T2<span class="token punctuation">;</span>
+
+<span class="token comment"># label | score</span>
+<span class="token comment"># -------+-------</span>
+<span class="token comment">#  A     |     1</span>
+<span class="token comment">#  B     |     1</span>
+<span class="token comment">#  A     |     2</span>
+<span class="token comment">#  B     |     2</span>
+<span class="token comment">#  A     |     3</span>
+<span class="token comment">#  B     |     3</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="テーブルエイリアスas-clause"><a href="#テーブルエイリアスas-clause" class="header-anchor">#</a> テーブルエイリアスAS (clause)</h3> <p>クエリの実行中にテーブルに新しい名前を一時的に割り当てる。<br>
+※ASは省略可<br>
+JOIN句を使用して、同じ列名を持つ複数のテーブルからデータをクエリする場合、複数のテーブルに由来する同じ列名を完全に修飾(table_name.column_name)せずに使用すると、エラーが発生する。<br>
+その場合FROMおよびJOIN句でテーブル名のテーブルエイリアスを使用する。</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  JOINでのテーブルエイリアスの使用
+  クエリの見通しを良くする
+*/</span>
+<span class="token keyword">SELECT</span>
+	c<span class="token punctuation">.</span>customer_id<span class="token punctuation">,</span>
+	first_name<span class="token punctuation">,</span>
+	amount<span class="token punctuation">,</span>
+	payment_date
+<span class="token keyword">FROM</span>
+	customer c
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> payment p 
+    <span class="token keyword">ON</span> p<span class="token punctuation">.</span>customer_id <span class="token operator">=</span> c<span class="token punctuation">.</span>customer_id
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> 
+   payment_date <span class="token keyword">DESC</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*
+  自己結合
+  同じクエリでテーブルを2回参照する
+*/</span>
+<span class="token keyword">SELECT</span>
+    e<span class="token punctuation">.</span>first_name employee<span class="token punctuation">,</span>
+    m <span class="token punctuation">.</span>first_name manager
+<span class="token keyword">FROM</span>
+    employee e
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> employee m 
+    <span class="token keyword">ON</span> m<span class="token punctuation">.</span>employee_id <span class="token operator">=</span> e<span class="token punctuation">.</span>manager_id
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> manager<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="group-by-clause"><a href="#group-by-clause" class="header-anchor">#</a> GROUP BY (clause)</h3> <p>行をグループに分割する。<br>
+GROUP BY句は集計関数と共に使用できるが、集計関数の使用は必須ではない。<br>
+サンプルDBのpaymentテーブルでの例<br> <img src="/sqljoinimages/payment.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  SUM関数の使用
+  各顧客の支払い合計金額を調べる。
+*/</span>
+<span class="token keyword">SELECT</span>
+	customer_id<span class="token punctuation">,</span>
+	<span class="token function">SUM</span> <span class="token punctuation">(</span>amount<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+	payment
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+	customer_id
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+	<span class="token function">SUM</span> <span class="token punctuation">(</span>amount<span class="token punctuation">)</span> <span class="token keyword">DESC</span><span class="token punctuation">;</span>
+
+<span class="token comment">#  customer_id |  sum</span>
+<span class="token comment"># -------------+--------</span>
+<span class="token comment">#          148 | 211.55</span>
+<span class="token comment">#          526 | 208.58</span>
+<span class="token comment">#          178 | 194.61</span>
+<span class="token comment">#          137 | 191.62</span>
+<span class="token comment">#          144 | 189.60</span>
+<span class="token comment">#          459 | 183.63</span>
+<span class="token comment">#          181 | 167.67</span>
+<span class="token comment">#          410 | 167.62</span>
+<span class="token comment">#          236 | 166.61</span>
+<span class="token comment">#          403 | 162.67</span>
+
+<span class="token comment">/*
+  JOINと共に使用する。
+*/</span>
+<span class="token keyword">SELECT</span>
+	first_name <span class="token operator">||</span> <span class="token string">' '</span> <span class="token operator">||</span> last_name full_name<span class="token punctuation">,</span>
+	<span class="token function">SUM</span> <span class="token punctuation">(</span>amount<span class="token punctuation">)</span> amount
+<span class="token keyword">FROM</span>
+	payment
+<span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> customer <span class="token keyword">USING</span> <span class="token punctuation">(</span>customer_id<span class="token punctuation">)</span>    	
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+	full_name
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> amount<span class="token punctuation">;</span>
+
+<span class="token comment">#     full_name    | amount</span>
+<span class="token comment"># -----------------+--------</span>
+<span class="token comment">#  Brian Wyman     |  27.93</span>
+<span class="token comment">#  Leona Obrien    |  32.90</span>
+<span class="token comment">#  Caroline Bowman |  37.87</span>
+<span class="token comment">#  Anthony Schwab  |  47.85</span>
+<span class="token comment">#  Tiffany Jordan  |  49.88</span>
+<span class="token comment">#  Kirk Stclair    |  50.83</span>
+<span class="token comment">#  Bobbie Craig    |  52.81</span>
+<span class="token comment">#  Jo Fowler       |  54.85</span>
+<span class="token comment">#  Penny Neal      |  56.84</span>
+<span class="token comment">#  Johnny Turpin   |  57.81</span>
+
+<span class="token comment">/*
+  COUNT関数の使用
+*/</span>
+<span class="token keyword">SELECT</span>
+	staff_id<span class="token punctuation">,</span>
+
+	<span class="token function">COUNT</span> <span class="token punctuation">(</span>payment_id<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+	payment
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+	staff_id<span class="token punctuation">;</span>
+
+<span class="token comment">#  staff_id | count</span>
+<span class="token comment">#----------+-------</span>
+<span class="token comment">#        1 |  7292</span>
+<span class="token comment">#        2 |  7304</span>
+
+<span class="token comment">/*
+  複数列での使用
+*/</span>
+<span class="token keyword">SELECT</span> 
+	customer_id<span class="token punctuation">,</span> 
+	staff_id<span class="token punctuation">,</span> 
+	<span class="token function">SUM</span><span class="token punctuation">(</span>amount<span class="token punctuation">)</span> 
+<span class="token keyword">FROM</span> 
+	payment
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> 
+	staff_id<span class="token punctuation">,</span> 
+	customer_id
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> 
+    customer_id<span class="token punctuation">;</span>
+
+<span class="token comment">#  customer_id | staff_id |  sum</span>
+<span class="token comment"># -------------+----------+-------</span>
+<span class="token comment">#            1 |        1 | 60.85</span>
+<span class="token comment">#            1 |        2 | 53.85</span>
+<span class="token comment">#            2 |        1 | 55.86</span>
+<span class="token comment">#            2 |        2 | 67.88</span>
+<span class="token comment">#            3 |        1 | 59.88</span>
+<span class="token comment">#            3 |        2 | 70.88</span>
+<span class="token comment">#            4 |        1 | 49.88</span>
+<span class="token comment">#            4 |        2 | 31.90</span>
+<span class="token comment">#            5 |        1 | 63.86</span>
+<span class="token comment">#            5 |        2 | 70.79</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br></div></div><h4 id="grouping-sets"><a href="#grouping-sets" class="header-anchor">#</a> GROUPING SETS</h4> <p>GROUPING SETSを使用すると、1つのクエリで複数のグループ化セットを定義することができる。<br>
+まず下記のコードブロックに示すように、GROUP BY句の意味をもう一度考える。<br>
+次のコードブロックまで飛ばしてもOK</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">#  brand | segment | quantity</span>
+<span class="token comment"># -------+---------+----------</span>
+<span class="token comment">#  ABC   | Premium |      100</span>
+<span class="token comment">#  ABC   | Basic   |      200</span>
+<span class="token comment">#  XYZ   | Premium |      100</span>
+<span class="token comment">#  XYZ   | Basic   |      300</span>
+
+<span class="token comment">/*
+  ブランドで販売されている製品の数を返す。
+  (brandのグループを定義している)
+*/</span>
+<span class="token keyword">SELECT</span>
+    brand<span class="token punctuation">,</span>
+    <span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+    sales
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+    brand<span class="token punctuation">;</span>
+
+<span class="token comment">#  brand | sum</span>
+<span class="token comment"># -------+-----</span>
+<span class="token comment">#  ABC   | 300</span>
+<span class="token comment">#  XYZ   | 400</span>
+
+<span class="token comment">/*
+  すべてのブランドとセグメントで販売された製品の数を返す。
+  (空のグループを定義している)
+*/</span>
+
+<span class="token keyword">SELECT</span> <span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span> <span class="token keyword">FROM</span> sales<span class="token punctuation">;</span>
+
+<span class="token comment">#  sum</span>
+<span class="token comment"># -----</span>
+<span class="token comment">#  700</span>
+
+<span class="token comment">/*
+1つクエリをで、複数のグループ化セットを取得する。
+これを実現するには、UNION ALLを使用して上記のすべてのクエリを組み合わせる。
+UNION ALLでは、すべての結果セットが互換性のあるデータ型で同じ数の列を持つ必要があるため、
+以下のようにそれぞれの選択リストにNULLを追加してクエリを調整する必要があります。
+*/</span>
+<span class="token keyword">SELECT</span>
+    brand<span class="token punctuation">,</span>
+    segment<span class="token punctuation">,</span>
+    <span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+    sales
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+    brand<span class="token punctuation">,</span>
+    segment
+
+<span class="token keyword">UNION</span> <span class="token keyword">ALL</span>
+
+<span class="token keyword">SELECT</span>
+    brand<span class="token punctuation">,</span>
+    <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+    sales
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+    brand
+
+<span class="token keyword">UNION</span> <span class="token keyword">ALL</span>
+
+<span class="token keyword">SELECT</span>
+    <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    segment<span class="token punctuation">,</span>
+    <span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+    sales
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+    segment
+
+<span class="token keyword">UNION</span> <span class="token keyword">ALL</span>
+
+<span class="token keyword">SELECT</span>
+    <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token boolean">NULL</span><span class="token punctuation">,</span>
+    <span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+    sales<span class="token punctuation">;</span>
+
+<span class="token comment">#  brand | segment | sum</span>
+<span class="token comment"># -------+---------+-----</span>
+<span class="token comment">#  XYZ   | Basic   | 300</span>
+<span class="token comment">#  ABC   | Premium | 100</span>
+<span class="token comment">#  ABC   | Basic   | 200</span>
+<span class="token comment">#  XYZ   | Premium | 100</span>
+<span class="token comment">#  ABC   |         | 300</span>
+<span class="token comment">#  XYZ   |         | 400</span>
+<span class="token comment">#        | Basic   | 500</span>
+<span class="token comment">#        | Premium | 200</span>
+<span class="token comment">#        |         | 700</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br></div></div><p>このようにUNION ALL等を使用して、複数にグループを1つのクエリで取得する場合、</p> <ul><li>クエリが長くなる。</li> <li>UNION前のクエリ毎にテーブルをスキャンしなければならないため、パフォーマンスの問題が生じる。<br>
+これらの問題を解決し、より効率的にするためにGROUP BY句のサブ句であるGROUPING SETS句が存在する。<br>
+前述の通り、GROUPING SETSを使用すると、1つのクエリで複数のグループ化セットを定義することができる。</li></ul> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">#  brand | segment | quantity</span>
+<span class="token comment"># -------+---------+----------</span>
+<span class="token comment">#  ABC   | Premium |      100</span>
+<span class="token comment">#  ABC   | Basic   |      200</span>
+<span class="token comment">#  XYZ   | Premium |      100</span>
+<span class="token comment">#  XYZ   | Basic   |      300</span>
+
+<span class="token comment">/*
+  
+  複数のグループ化セットを取得する。
+*/</span>
+<span class="token keyword">SELECT</span>
+    brand<span class="token punctuation">,</span>
+    segment<span class="token punctuation">,</span>
+    <span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+    sales
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+    GROUPING SETS <span class="token punctuation">(</span>
+        <span class="token punctuation">(</span>brand<span class="token punctuation">,</span> segment<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">(</span>brand<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">(</span>segment<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">#  brand | segment | sum</span>
+<span class="token comment"># -------+---------+-----</span>
+<span class="token comment">#        |         | 700</span>
+<span class="token comment">#  XYZ   | Basic   | 300</span>
+<span class="token comment">#  ABC   | Premium | 100</span>
+<span class="token comment">#  ABC   | Basic   | 200</span>
+<span class="token comment">#  XYZ   | Premium | 100</span>
+<span class="token comment">#  ABC   |         | 300</span>
+<span class="token comment">#  XYZ   |         | 400</span>
+<span class="token comment">#        | Basic   | 500</span>
+<span class="token comment">#        | Premium | 200</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h4 id="grouping-function"><a href="#grouping-function" class="header-anchor">#</a> GROUPING (function)</h4> <p>列名または式を受け入れ、GROUP BY 節で指定されたものと一致する必要がある。<br>
+引数が現在のグループ化セットのメンバであればビット 0 を返し、そうでなければビット 1 を返す。<br>
+HAVING句でGROUPING関数を使うと、各ブランドの小計を見つけることができます。</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  GROUPING関数の使用
+*/</span>
+<span class="token keyword">SELECT</span>
+	GROUPING<span class="token punctuation">(</span>brand<span class="token punctuation">)</span> grouping_brand<span class="token punctuation">,</span>
+	GROUPING<span class="token punctuation">(</span>segment<span class="token punctuation">)</span> grouping_segment<span class="token punctuation">,</span>
+	brand<span class="token punctuation">,</span>
+	segment<span class="token punctuation">,</span>
+	<span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+	sales
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+	GROUPING SETS <span class="token punctuation">(</span>
+		<span class="token punctuation">(</span>brand<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">(</span>segment<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">)</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+	brand<span class="token punctuation">,</span>
+	segment<span class="token punctuation">;</span>
+
+<span class="token comment">#  grouping_brand | grouping_segment | brand | segment | sum</span>
+<span class="token comment"># ----------------+------------------+-------+---------+-----</span>
+<span class="token comment">#               0 |                1 | ABC   |         | 300</span>
+<span class="token comment">#               0 |                1 | XYZ   |         | 400</span>
+<span class="token comment">#               1 |                0 |       | Basic   | 500</span>
+<span class="token comment">#               1 |                0 |       | Premium | 200</span>
+<span class="token comment">#               1 |                1 |       |         | 700</span>
+
+<span class="token comment">/*
+  HAVING句でのGROUPING関数の使用
+*/</span>
+<span class="token keyword">SELECT</span>
+	GROUPING<span class="token punctuation">(</span>brand<span class="token punctuation">)</span> grouping_brand<span class="token punctuation">,</span>
+	GROUPING<span class="token punctuation">(</span>segment<span class="token punctuation">)</span> grouping_segment<span class="token punctuation">,</span>
+	brand<span class="token punctuation">,</span>
+	segment<span class="token punctuation">,</span>
+	<span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+	sales
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+	GROUPING SETS <span class="token punctuation">(</span>
+		<span class="token punctuation">(</span>brand<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">(</span>segment<span class="token punctuation">)</span><span class="token punctuation">,</span>
+		<span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token punctuation">)</span>
+<span class="token keyword">HAVING</span> GROUPING<span class="token punctuation">(</span>brand<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span>	
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+	brand<span class="token punctuation">,</span>
+	segment<span class="token punctuation">;</span>
+
+<span class="token comment">#  grouping_brand | grouping_segment | brand | segment | sum</span>
+<span class="token comment"># ----------------+------------------+-------+---------+-----</span>
+<span class="token comment">#               0 |                1 | ABC   |         | 300</span>
+<span class="token comment">#               0 |                1 | XYZ   |         | 400</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br></div></div><h4 id="cube"><a href="#cube" class="header-anchor">#</a> CUBE</h4> <p>GROUP BY句のサブ句です。<br>
+CUBEを使用すると、複数のグループ化セットを生成することができます。<br>
+最初に、SELECT 文の GROUP BY 節で CUBE サブ句を指定します。<br>
+2 番目に、SELECT リストで、分析する列 (ディメンジョンまたはディメンジョン列) と集計関数式を指定します。<br>
+3 番目に、GROUP BY 節で、CUBE サブ句の括弧内のディメンジョン・カラムを指定します。<br>
+クエリは、CUBE で指定されたディメンジョン列に基づいて、可能なすべてのグループ化セットを生成します。<br>
+一般的に、CUBEで指定した列の数をn個とすると、2^n個の組み合わせになります。<br>
+下記は同じ意味を表します。</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code>CUBE<span class="token punctuation">(</span>c1<span class="token punctuation">,</span>c2<span class="token punctuation">,</span>c3<span class="token punctuation">)</span> 
+
+GROUPING SETS <span class="token punctuation">(</span>
+    <span class="token punctuation">(</span>c1<span class="token punctuation">,</span>c2<span class="token punctuation">,</span>c3<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token punctuation">(</span>c1<span class="token punctuation">,</span>c2<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>c1<span class="token punctuation">,</span>c3<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>c2<span class="token punctuation">,</span>c3<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>c1<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span>c3<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token punctuation">)</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">#  brand | segment | quantity</span>
+<span class="token comment"># -------+---------+----------</span>
+<span class="token comment">#  ABC   | Premium |      100</span>
+<span class="token comment">#  ABC   | Basic   |      200</span>
+<span class="token comment">#  XYZ   | Premium |      100</span>
+<span class="token comment">#  XYZ   | Basic   |      300</span>
+
+<span class="token keyword">SELECT</span>
+    brand<span class="token punctuation">,</span>
+    segment<span class="token punctuation">,</span>
+    <span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+    sales
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+    CUBE <span class="token punctuation">(</span>brand<span class="token punctuation">,</span> segment<span class="token punctuation">)</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+    brand<span class="token punctuation">,</span>
+    segment<span class="token punctuation">;</span>
+
+<span class="token comment">#  brand | segment | sum</span>
+<span class="token comment"># -------+---------+-----</span>
+<span class="token comment">#  ABC   | Basic   | 200</span>
+<span class="token comment">#  ABC   | Premium | 100</span>
+<span class="token comment">#  ABC   |         | 300</span>
+<span class="token comment">#  XYZ   | Basic   | 300</span>
+<span class="token comment">#  XYZ   | Premium | 100</span>
+<span class="token comment">#  XYZ   |         | 400</span>
+<span class="token comment">#        | Basic   | 500</span>
+<span class="token comment">#        | Premium | 200</span>
+<span class="token comment">#        |         | 700</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h4 id="rollup"><a href="#rollup" class="header-anchor">#</a> ROLLUP</h4> <p>GROUP BY句のサブ句です。<br>
+ROLLUPを使用すると、複数のグループ化セットを生成することができます。<br>
+CUBEサブ句とは異なり、ROLLUPは指定された列に基づいて可能なすべてのグループ化セットを生成しません。<br>
+選択列のサブセットを作成するだけです。<br>
+入力カラム間の階層を想定し、その階層を考慮して意味のあるすべてのグループ化セットを生成します。<br>
+ROLLUPがレポートの小計や総計を生成するのによく使われる理由です。<br>
+ROLLUPの一般的な使用法は、年&gt;月&gt;日の階層を考慮して、年、月、日ごとのデータの集計を計算することです。<br>
+下記は同じ意味を表します。</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code>ROLLUP<span class="token punctuation">(</span>c1<span class="token punctuation">,</span>c2<span class="token punctuation">,</span>c3<span class="token punctuation">)</span>
+
+GROUPING SETS <span class="token punctuation">(</span>
+    <span class="token punctuation">(</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">,</span> c3<span class="token punctuation">)</span>
+    <span class="token punctuation">(</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">)</span>
+    <span class="token punctuation">(</span>c1<span class="token punctuation">)</span>
+    <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token punctuation">)</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>サンプルテーブルsalesの例<br>
+出力を見るとよくわかるように、3列目はABCブランドの売上高、6列目はXYZブランドの売上高を表示しています。<br>
+最後の行は、すべてのブランドとセグメントの合計を表示しています。<br>
+この例では、ブランド &gt; セグメントという階層になっています。</p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">#  brand | segment | quantity</span>
+<span class="token comment"># -------+---------+----------</span>
+<span class="token comment">#  ABC   | Premium |      100</span>
+<span class="token comment">#  ABC   | Basic   |      200</span>
+<span class="token comment">#  XYZ   | Premium |      100</span>
+<span class="token comment">#  XYZ   | Basic   |      300</span>
+
+<span class="token keyword">SELECT</span>
+    brand<span class="token punctuation">,</span>
+    segment<span class="token punctuation">,</span>
+    <span class="token function">SUM</span> <span class="token punctuation">(</span>quantity<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+    sales
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+    ROLLUP <span class="token punctuation">(</span>brand<span class="token punctuation">,</span> segment<span class="token punctuation">)</span>
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
+    brand<span class="token punctuation">,</span>
+    segment<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>サンプルDB、rentalテーブルでの例<br> <img src="/sqljoinimages/rental.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  ROLLUPを使って1日、1ヶ月、1年あたりのレンタル数を求めます。
+*/</span>
+<span class="token keyword">SELECT</span>
+    EXTRACT <span class="token punctuation">(</span><span class="token keyword">YEAR</span> <span class="token keyword">FROM</span> rental_date<span class="token punctuation">)</span> y<span class="token punctuation">,</span>
+    EXTRACT <span class="token punctuation">(</span><span class="token keyword">MONTH</span> <span class="token keyword">FROM</span> rental_date<span class="token punctuation">)</span> M<span class="token punctuation">,</span>
+    EXTRACT <span class="token punctuation">(</span><span class="token keyword">DAY</span> <span class="token keyword">FROM</span> rental_date<span class="token punctuation">)</span> d<span class="token punctuation">,</span>
+    <span class="token function">COUNT</span> <span class="token punctuation">(</span>rental_id<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+    rental
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+    ROLLUP <span class="token punctuation">(</span>
+        EXTRACT <span class="token punctuation">(</span><span class="token keyword">YEAR</span> <span class="token keyword">FROM</span> rental_date<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        EXTRACT <span class="token punctuation">(</span><span class="token keyword">MONTH</span> <span class="token keyword">FROM</span> rental_date<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        EXTRACT <span class="token punctuation">(</span><span class="token keyword">DAY</span> <span class="token keyword">FROM</span> rental_date<span class="token punctuation">)</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">#   y   | m | d  | count</span>
+<span class="token comment"># ------+---+----+-------</span>
+<span class="token comment">#  2005 | 5 | 24 |     8</span>
+<span class="token comment">#  2005 | 5 | 25 |   137</span>
+<span class="token comment">#  2005 | 5 | 26 |   174</span>
+<span class="token comment">#  2005 | 5 | 27 |   166</span>
+<span class="token comment">#  2005 | 5 | 28 |   196</span>
+<span class="token comment">#  2005 | 5 | 29 |   154</span>
+<span class="token comment">#  2005 | 5 | 30 |   158</span>
+<span class="token comment">#  2005 | 5 | 31 |   163</span>
+<span class="token comment">#  2005 | 5 |    |  1156</span>
+<span class="token comment">#  2005 | 6 | 14 |    16</span>
+<span class="token comment">#  2005 | 6 | 15 |   348</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h3 id="having-clause"><a href="#having-clause" class="header-anchor">#</a> HAVING (clause)</h3> <p>グループや集計の検索条件を指定する。<br>
+WHERE ⇒ GROUP BY ⇒ HAVING ⇒ SELECT<br>
+WHERE句は行に適用され、HAVING句は行のグループに適用される。<br>
+サンプルDBのpaymentテーブルでの例<br> <img src="/sqljoinimages/payment.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">/*
+  200ドル以上の支出をしている顧客を調べる。
+*/</span>
+<span class="token keyword">SELECT</span>
+	customer_id<span class="token punctuation">,</span>
+	<span class="token function">SUM</span> <span class="token punctuation">(</span>amount<span class="token punctuation">)</span>
+<span class="token keyword">FROM</span>
+	payment
+<span class="token keyword">GROUP</span> <span class="token keyword">BY</span>
+	customer_id
+<span class="token keyword">HAVING</span>
+	<span class="token function">SUM</span> <span class="token punctuation">(</span>amount<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">200</span><span class="token punctuation">;</span>
+
+<span class="token comment">#  customer_id |  sum</span>
+<span class="token comment"># -------------+--------</span>
+<span class="token comment">#          526 | 208.58</span>
+<span class="token comment">#          148 | 211.55</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h3 id="union-operator"><a href="#union-operator" class="header-anchor">#</a> UNION (operator)</h3> <p>複数のクエリの結果セットを1つの結果セットに結合する。<br>
+どちらかの結果セットで利用可能な行を返す。<br>
+UNION演算子は結合された結果セットからすべての重複した行を削除するため、重複した行を保持したい場合、UNION ALLを使用する必要がある。<br>
+UNION演算子を実行するためには下記の条件を満たしている必要がある。</p> <ul><li>両方のクエリの結果セットはカラムの数と順序が同じでなければならない。</li> <li>データ型には互換性が無ければいけない。
+最終的な結果セットの行をソートするには、2番目のクエリでORDER BY句を使用する。<br>
+完全に正規化されていない類似のテーブルからのデータを結合するためにUNION演算子を使用することがよくある。<br>
+UNIONの動作を示す。<br> <img src="/sqljoinimages/PostgresQL-UNION.png" alt="An image"></li></ul> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">#           title           | release_year</span>
+<span class="token comment"># --------------------------+--------------</span>
+<span class="token comment">#  The Shawshank Redemption |         1994</span>
+<span class="token comment">#  The Godfather            |         1972</span>
+<span class="token comment">#  12 Angry Men             |         1957</span>
+<span class="token comment"># </span>
+<span class="token comment">#         title        | release_year</span>
+<span class="token comment"># --------------------+--------------</span>
+<span class="token comment">#  An American Pickle |         2020</span>
+<span class="token comment">#  The Godfather      |         1972</span>
+<span class="token comment">#  Greyhound          |         2020</span>
+
+<span class="token comment">/*
+  UNION演算子の使用
+*/</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> top_rated_films
+<span class="token keyword">UNION</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> most_popular_films<span class="token punctuation">;</span>
+<span class="token comment">#           title           | release_year</span>
+<span class="token comment"># --------------------------+--------------</span>
+<span class="token comment">#  An American Pickle       |         2020</span>
+<span class="token comment">#  Greyhound                |         2020</span>
+<span class="token comment">#  The Shawshank Redemption |         1994</span>
+<span class="token comment">#  The Godfather            |         1972</span>
+<span class="token comment">#  12 Angry Men             |         1957</span>
+
+<span class="token comment">/*
+  UNION ALL演算子の使用
+*/</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> top_rated_films
+<span class="token keyword">UNION</span> <span class="token keyword">ALL</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> most_popular_films
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> title<span class="token punctuation">;</span>
+
+<span class="token comment">#           title           | release_year</span>
+<span class="token comment"># --------------------------+--------------</span>
+<span class="token comment">#  12 Angry Men             |         1957</span>
+<span class="token comment">#  An American Pickle       |         2020</span>
+<span class="token comment">#  Greyhound                |         2020</span>
+<span class="token comment">#  The Godfather            |         1972</span>
+<span class="token comment">#  The Godfather            |         1972</span>
+<span class="token comment">#  The Shawshank Redemption |         1994</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><h3 id="intersect-operator"><a href="#intersect-operator" class="header-anchor">#</a> INTERSECT (operator)</h3> <p>複数のクエリの結果セットを1つの結果セットに結合する。<br>
+両方の結果セットで利用可能な行を返す。<br>
+INTERSECT演算子を実行するためには下記の条件を満たしている必要がある。</p> <ul><li>両方のクエリの結果セットはカラムの数と順序が同じでなければならない。</li> <li>データ型には互換性が無ければいけない。
+INTERSECTの動作を示す。<br> <img src="/sqljoinimages/PostgreSQL-INTERSECT-Operator-300x206.png" alt="An image"><br>
+最終的な結果セットの行をソートするには、2番目のクエリでORDER BY句を使用する。</li></ul> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">#           title           | release_year</span>
+<span class="token comment"># --------------------------+--------------</span>
+<span class="token comment">#  The Shawshank Redemption |         1994</span>
+<span class="token comment">#  The Godfather            |         1972</span>
+<span class="token comment">#  12 Angry Men             |         1957</span>
+<span class="token comment"># </span>
+<span class="token comment">#         title        | release_year</span>
+<span class="token comment"># --------------------+--------------</span>
+<span class="token comment">#  An American Pickle |         2020</span>
+<span class="token comment">#  The Godfather      |         1972</span>
+<span class="token comment">#  Greyhound          |         2020</span>
+
+<span class="token comment">/*
+  INTERSECT演算子の使用
+*/</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> most_popular_films 
+<span class="token keyword">INTERSECT</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> top_rated_films<span class="token punctuation">;</span>
+
+<span class="token comment">#      title     | release_year</span>
+<span class="token comment"># ---------------+--------------</span>
+<span class="token comment">#  The Godfather |         1972</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h3 id="except"><a href="#except" class="header-anchor">#</a> EXCEPT</h3> <p>複数のクエリの結果セットを1つの結果セットに結合する。<br>
+最初の結果セットに存在し、2番目の結果セットに存在しない行を返す。<br>
+EXCEPTの動作を示す。<br> <img src="/sqljoinimages/PostgreSQL-EXCEPT-300x202.png" alt="An image"></p> <div class="language-SQL line-numbers-mode"><pre class="language-sql"><code><span class="token comment">#           title           | release_year</span>
+<span class="token comment"># --------------------------+--------------</span>
+<span class="token comment">#  The Shawshank Redemption |         1994</span>
+<span class="token comment">#  The Godfather            |         1972</span>
+<span class="token comment">#  12 Angry Men             |         1957</span>
+<span class="token comment"># </span>
+<span class="token comment">#         title        | release_year</span>
+<span class="token comment"># --------------------+--------------</span>
+<span class="token comment">#  An American Pickle |         2020</span>
+<span class="token comment">#  The Godfather      |         1972</span>
+<span class="token comment">#  Greyhound          |         2020</span>
+
+<span class="token comment">/*
+  EXCEPT演算子の使用
+*/</span>
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> top_rated_films
+<span class="token keyword">EXCEPT</span> 
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> most_popular_films
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> title<span class="token punctuation">;</span>
+
+<span class="token comment">#           title           | release_year</span>
+<span class="token comment"># --------------------------+--------------</span>
+<span class="token comment">#  12 Angry Men             |         1957</span>
+<span class="token comment">#  The Shawshank Redemption |         1994</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div></div> <footer class="page-edit" style="display:none;"><div class="edit-link"><a href="https://github.com/imuradevelopment/blog/edit/main/docs/postgreSQL/SQL.md" target="_blank" rel="noopener noreferrer">このページを編集する</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----></div></div>
+    <script src="/blog/assets/js/app.8b46e1f1.js" defer></script><script src="/blog/assets/js/3.b4aa75af.js" defer></script><script src="/blog/assets/js/1.fa43a96b.js" defer></script><script src="/blog/assets/js/15.cbd0d66e.js" defer></script>
+  </body>
+</html>
